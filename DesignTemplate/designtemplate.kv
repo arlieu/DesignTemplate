@@ -1,0 +1,132 @@
+<WrappedLabel@Label>:
+	size_hint_y: None
+	height: self.texture_size[1] + self.texture_size[1]/2	#  height of text + half height of text
+	markup: True	#  allows for text editing (bolding, italics, underlining, etc)
+
+
+<MainMenu>:
+	orientation: 'vertical' 
+    screenManager: screenManager
+    selectorScreen: selectorScreen
+
+	ActionBar:
+		ActionView: 
+			ActionPrevious:
+				title: 'UI Designs'
+				with_previous: False
+			ActionOverflow:
+				ActionButton:
+					text: 'Settings'
+					on_press: app.open_settings()
+
+	ScreenManager:
+		id: screenManager
+
+		# Add screens to manage here
+		StartScreen:
+			id: startScreen
+			name: 'startScreen'
+		SelectorScreen:
+			id: selectorScreen
+			name: 'selectorScreen'
+		NavigationScreen:
+			id: navigationScreen
+			name: 'navigationScreen'
+		ChartScreen:
+			id: chartScreen
+			name: 'chartScreen'
+		MediaScreen:
+			id: mediaScreen
+			name: 'mediaScreen'
+		AboutScreen:
+			id: aboutScreen
+			name: 'aboutScreen'
+
+
+<StartScreen@Screen>:
+	BoxLayout: 
+		orientation: 'vertical'
+		padding: root.width*0.02, root.height*0.02 
+		spacing: min(root.width, root.height)*0.02
+
+		WrappedLabel:	#  inheritted custom label class
+			text: '[b]UI Designs[/b]'
+			font_size: min(root.height, root.width)/10
+		Button: 
+			text: 'Selectors'
+            on_release: app.root.changeScreen(self.text.lower())
+		Button: 
+			text: 'Navigation'
+            on_release: app.root.changeScreen(self.text.lower())
+		Button: 
+			text: 'Charts'
+            on_release: app.root.changeScreen(self.text.lower())
+		Button: 
+			text: 'Media'
+            on_release: app.root.changeScreen(self.text.lower())
+		Button: 
+			text: 'About'
+			on_release: app.root.changeScreen(self.text.lower())
+
+
+<SelectorScreen>:
+    inputLabel: inputLabel
+    inputBox: inputBox
+    
+	BoxLayout:
+        orientation: 'vertical'
+		padding: root.width*0.02, root.height*0.02
+        WrappedLabel:
+            id: inputLabel
+            text: 'Text Input'
+            font_size: min(root.height, root.width) / 10
+        BoxLayout: 
+            orientation: 'horizontal' 
+            size_hint_y: None
+            WrappedLabel:
+                id: inputBox
+                text: ''
+                font_size: min(root.height, root.width) / 10
+            Button:
+                id: clearn_btn
+                text: '[b]Clear[/b]'
+                markup: True
+                size_hint: 0.3, None
+                height: inputLabel.texture_size[1]
+                on_release: inputBox.text = ''
+                
+
+
+<NavigationScreen@Screen>:
+	BoxLayout:
+		padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'
+
+
+<ChartScreen@Screen>:
+	BoxLayout:
+		padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'
+			
+
+<MediaScreen@Screen>:
+	BoxLayout:
+		padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'
+
+
+<AboutScreen@Screen>:
+	BoxLayout: 
+		padding: root.width*0.02, root.height*0.02
+		Label:
+			text: app.getText()		#  custom method
+			halign: 'center'
+			markup: True	#  required for hyperlinks 
+			font_size: root.height/20
+			text_size: self.width, None		#  text wrapped at width
+			center_y: 0.5
+			on_ref_press: app.on_ref_press(*args)	#  custom method, 
+													
