@@ -69,32 +69,85 @@
 			on_release: app.root.changeScreen(self.text.lower())
 
 
-<SelectorScreen>:
-    inputLabel: inputLabel
-    inputBox: inputBox
-    
-	BoxLayout:
-        orientation: 'vertical'
-		padding: root.width*0.02, root.height*0.02
-        WrappedLabel:
-            id: inputLabel
-            text: 'Text Input'
-            font_size: min(root.height, root.width) / 10
-        BoxLayout: 
-            orientation: 'horizontal' 
-            size_hint_y: None
-            WrappedLabel:
-                id: inputBox
-                text: ''
-                font_size: min(root.height, root.width) / 10
-            Button:
-                id: clearn_btn
-                text: '[b]Clear[/b]'
-                markup: True
-                size_hint: 0.3, None
-                height: inputLabel.texture_size[1]
-                on_release: inputBox.text = ''
-                
+<SelectorScreen@Screen>:
+    id: selectorScreen
+    orientation: 'vertical' 
+    selectorScreenManager: selectorScreenManager
+    dropdownScreen: dropdownScreen
+    keypadScreen: keypadScreen
+    checkboxScreen: checkboxScreen
+    sidebarScreen: sidebarScreen
+
+	ScreenManager:
+		id: selectorScreenManager
+
+		SelectorStartScreen:
+			id: selectorStartScreen
+			name: 'selectorStartScreen'
+		DropDownScreen:
+			id: dropdownScreen
+			name: 'dropdownScreen'
+		KeyPadScreen:
+			id: keypadScreen
+			name: 'keypadScreen'
+		CheckboxScreen:
+			id: checkboxScreen
+			name: 'checkboxScreen'
+		SidebarScreen:
+			id: sidebarScreen
+			name: 'sidebarScreen'
+        
+
+<SelectorStartScreen@Screen>:
+    id: selectorStartScreen
+    BoxLayout: 
+		orientation: 'vertical'
+		padding: root.width*0.02, root.height*0.02 
+		spacing: min(root.width, root.height)*0.02
+
+		WrappedLabel:	
+			text: '[b]Selector Elements[/b]'
+			font_size: min(root.height, root.width)/10
+		Button: 
+			text: 'Drop Down Menu'
+            on_release: app.root.subMenu1(self.text.lower())
+		Button: 
+			text: 'Key Pad'
+            on_release: app.root.subMenu1(self.text.lower())
+		Button: 
+			text: 'Checkbox'
+            on_release: app.root.subMenu1(self.text.lower())
+		Button: 
+			text: 'Sidebar'
+            on_release: app.root.subMenu1(self.text.lower())
+            
+            
+<DropDownScreen@Screen>:
+    BoxLayout: 
+        padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'
+            
+            
+<KeyPadScreen@Screen>:
+    BoxLayout: 
+        padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'
+            
+            
+<CheckboxScreen@Screen>:
+    BoxLayout: 
+        padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'            
+
+
+<SidebarScreen@Screen>:
+    BoxLayout: 
+        padding: root.width*0.02, root.height*0.02
+		Label: 
+			text: 'Work in progress'   
 
 
 <NavigationScreen@Screen>:
