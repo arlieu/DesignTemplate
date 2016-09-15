@@ -25,6 +25,9 @@
     <Compile Include="backup.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="custombutton.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="customdropdown.py">
       <SubType>Code</SubType>
     </Compile>
