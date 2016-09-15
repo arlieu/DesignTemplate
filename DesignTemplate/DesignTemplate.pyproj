@@ -31,6 +31,9 @@
     <Compile Include="customdropdown.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="customtogglebutton.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="designtemplateapp.py">
       <SubType>Code</SubType>
     </Compile>

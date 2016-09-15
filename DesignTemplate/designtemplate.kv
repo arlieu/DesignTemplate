@@ -1,5 +1,7 @@
 #:import CustomDropDown customdropdown
 #:import CustomButton custombutton
+#:import CustomToggleButton customtogglebutton
+
 
 
 <WrappedLabel@Label>:
@@ -125,20 +127,30 @@
 <ButtonScreen@Screen>:
     id: buttonScreen
     BoxLayout: 
-        padding: root.width*0.02, root.height*0.02
+        orientation: 'vertical'
+        padding: root.width*0.2, root.height*0.2
 		CustomButton:
             background_color: (0.0, 1.0, 0.0, 1.0)
-            size_hint: None, None
-            width: root.width*0.3
-            height: root.height*0.2
-            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            font_size: min(root.height, root.width)/15
+
+    
     
 <ToggleButtonScreen@Screen>:
     id: togglebuttonScreen
     BoxLayout: 
-        padding: root.width*0.02, root.height*0.02
-		Label: 
-			text: 'Work in progress'
+        orientation: 'vertical'
+        padding: root.width*0.2, root.height*0.2
+        spacing: min(root.width, root.height)*0.02		
+        
+        CustomToggleButton:
+            text: 'Option 1'
+            font_size: min(root.height, root.width)/12
+        CustomToggleButton:
+            text: 'Option 2'
+            font_size: min(root.height, root.width)/12
+        CustomToggleButton:
+            text: 'Option 3'
+            font_size: min(root.height, root.width)/12
             
             
 <CheckboxScreen@Screen>:
