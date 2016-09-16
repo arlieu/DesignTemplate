@@ -22,10 +22,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NavigationElements\menubar.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NavigationElements\searchbox.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NavigationElements\sidebar.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SelectorElements\custombutton.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="customdropdown.py">
+    <Compile Include="NavigationElements\customdropdown.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SelectorElements\customtogglebutton.py">
@@ -48,6 +57,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="NavigationElements\" />
     <Folder Include="SelectorElements\" />
   </ItemGroup>
   <PropertyGroup>
