@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="MediaElements\customvideoplayer.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NavigationElements\menubar.py">
       <SubType>Code</SubType>
     </Compile>
@@ -58,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NavigationElements\" />
+    <Folder Include="MediaElements\" />
     <Folder Include="SelectorElements\" />
   </ItemGroup>
   <PropertyGroup>

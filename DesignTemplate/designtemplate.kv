@@ -2,6 +2,7 @@
 #:import CustomButton SelectorElements.custombutton
 #:import CustomToggleButton SelectorElements.customtogglebutton
 #:import KeyPad SelectorElements.keypad
+#:import CustomVideoPlayer MediaElements.customvideoplayer
 
 
 <WrappedLabel@Label>:
@@ -74,6 +75,7 @@
 			text: 'About'
 			on_release: app.root.changeScreen(self.text.lower())
 
+
 #------------------------------Selector Menu------------------------------#
 <SelectorScreen@Screen>:
     id: selectorScreen
@@ -136,7 +138,6 @@
             font_size: min(root.height, root.width)/15
 
     
-    
 <ToggleButtonScreen@Screen>:
     id: togglebuttonScreen
     
@@ -166,6 +167,7 @@
         
         Label:
             text: 'Checkbox'
+        
         GridLayout:
             cols: 2
             width: root.width*0.2
@@ -225,8 +227,10 @@
             Label:
                 text: ''
     
+    
 <KeyPadScreen@Screen>:
     id: keypadScreen
+    
     BoxLayout: 
         orientation: 'vertical'
         padding: root.width*0.02, root.height*0.02
@@ -267,6 +271,7 @@
 
 <NavigationStartScreen@Screen>:
     id: navigationStartScreen
+    
     BoxLayout: 
 		orientation: 'vertical'
 		padding: root.width*0.02, root.height*0.02 
@@ -331,10 +336,13 @@
 #------------------------------Media Demo------------------------------#
 
 <MediaScreen@Screen>:
+    id: mediaScreen
+
 	BoxLayout:
 		padding: root.width*0.02, root.height*0.02
-		Label: 
-			text: 'Work in progress'
+		orientation: 'vertical'
+        
+        CustomVideoPlayer:                          
 
 
 #------------------------------About Page------------------------------#
