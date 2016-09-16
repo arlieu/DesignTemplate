@@ -75,25 +75,3 @@ class MainMenu(BoxLayout):
                 self.ids.navigationScreen.navigationScreenManager.current = tmp
             return True
         return False
-        
-
-
-#class KeyPad(GridLayout):
-#    def __init__(self, *args, **kwargs):
-#        super(KeyPad, self).__init__(*args, **kwargs)
-#        self.cols = 3
-#        self.spacing = 10
-#        self.createButtons()
-
-#    def createButtons(self):
-#        bList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '', 'Enter']
-#        for i in bList:
-#            self.add_widget(Button(text=str(i), on_release=self.btnPress))
-
-#    def btnPress(self, btn):
-#        # App.get_running_app().root gives instance of app and 
-#        # access to MainMenu object
-#        selectorScreen = App.get_running_app().root.ids.selectorScreen
-
-#        inputText = selectorScreen.inputBox.text
-        

@@ -1,6 +1,7 @@
 #:import CustomDropDown customdropdown
-#:import CustomButton custombutton
-#:import CustomToggleButton customtogglebutton
+#:import CustomButton SelectorElements.custombutton
+#:import CustomToggleButton SelectorElements.customtogglebutton
+#:import KeyPad SelectorElements.keypad
 
 
 <WrappedLabel@Label>:
@@ -168,6 +169,7 @@
         GridLayout:
             cols: 2
             width: root.width*0.2
+            padding: root.width*0.02, root.height*0.02
             canvas:
                 Color:
                     rgb: .2, .2, .2
@@ -226,10 +228,15 @@
 <KeyPadScreen@Screen>:
     id: keypadScreen
     BoxLayout: 
+        orientation: 'vertical'
         padding: root.width*0.02, root.height*0.02
-		Label: 
-			text: 'Work in progress'
-    
+        spacing: min(root.width, root.height)*0.02
+        spacing: 
+		TextInput:
+            id: textBox
+            size_hint_y: 0.45
+        KeyPad:
+        
 
 #------------------------------Navigation Menu------------------------------#
 <NavigationScreen@Screen>:
