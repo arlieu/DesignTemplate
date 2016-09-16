@@ -3,7 +3,6 @@
 #:import CustomToggleButton customtogglebutton
 
 
-
 <WrappedLabel@Label>:
 	size_hint_y: None
 	height: self.texture_size[1] + self.texture_size[1]/2	#  height of text + half height of text
@@ -102,6 +101,7 @@
 
 <SelectorStartScreen@Screen>:
     id: selectorStartScreen
+    
     BoxLayout: 
 		orientation: 'vertical'
 		padding: root.width*0.02, root.height*0.02 
@@ -126,6 +126,7 @@
 
 <ButtonScreen@Screen>:
     id: buttonScreen
+    
     BoxLayout: 
         orientation: 'vertical'
         padding: root.width*0.2, root.height*0.2
@@ -137,6 +138,7 @@
     
 <ToggleButtonScreen@Screen>:
     id: togglebuttonScreen
+    
     BoxLayout: 
         orientation: 'vertical'
         padding: root.width*0.2, root.height*0.2
@@ -155,12 +157,72 @@
             
 <CheckboxScreen@Screen>:
     id: checkboxScreen
+    
     BoxLayout: 
         padding: root.width*0.02, root.height*0.02
-		Label: 
-			text: 'Work in progress'            
-
-
+		orientation: 'vertical'
+        padding: root.width*0.2, root.height*0.2
+        
+        Label:
+            text: 'Checkbox'
+        GridLayout:
+            cols: 2
+            width: root.width*0.2
+            canvas:
+                Color:
+                    rgb: .2, .2, .2
+                Rectangle: 
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: ''
+            Label:
+                text: ''
+            CheckBox:
+            CheckBox:
+            Label:
+                text: ''
+            Label:
+                text: ''
+            CheckBox:
+            CheckBox:
+            Label:
+                text: ''
+            Label:
+                text: ''
+    
+        Label:
+            text: 'Checkbox 2'
+        GridLayout:
+            cols: 2
+            width: root.width*0.2
+            canvas:
+                Color:
+                    rgb: .2, .2, .2
+                Rectangle: 
+                    pos: self.pos
+                    size: self.size
+            Label:
+                text: ''
+            Label:
+                text: ''
+            CheckBox:
+                group: '2'
+            CheckBox:
+                group: '2'
+            Label:
+                text: ''
+            Label:
+                text: ''
+            CheckBox:
+                group: '2'
+            CheckBox:
+                group: '2'
+            Label:
+                text: ''
+            Label:
+                text: ''
+    
 <KeyPadScreen@Screen>:
     id: keypadScreen
     BoxLayout: 
