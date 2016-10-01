@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ChartingElements\geographicmap.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="MediaElements\customvideoplayer.py">
       <SubType>Code</SubType>
     </Compile>
@@ -62,6 +65,7 @@
   <ItemGroup>
     <Folder Include="NavigationElements\" />
     <Folder Include="MediaElements\" />
+    <Folder Include="ChartingElements\" />
     <Folder Include="SelectorElements\" />
   </ItemGroup>
   <PropertyGroup>

@@ -20,6 +20,8 @@ class MainMenu(BoxLayout):
             'togglebuttonScreen', 'checkboxScreen', 'keypadScreen'])   
         self.navigatorMenu = set(['navigationStartScreen', 'dropdownScreen', \
             'sidebarScreen', 'menubarScreen', 'searchboxScreen']) 
+        self.chartMenu = set(['chartStartScreen', 'mapScreen', 'pieScreen', \
+            'lineScreen', 'tableScreen'])
 
     def changeScreen(self, newScreen):
         # back functionality
@@ -64,6 +66,19 @@ class MainMenu(BoxLayout):
         elif newScreen == 'search box':
             self.ids.navigationScreen.navigationScreenManager.current = 'searchboxScreen'
 
+    def subMenu3(self, newScreen):
+        if self.ids.chartScreen.chartScreenManager.current not in self.screenList:
+            self.screenList.append(self.ids.chartScreen.chartScreenManager.current)
+
+        if newScreen == 'geographic map':
+            self.ids.chartScreen.chartScreenManager.current = 'mapScreen'
+        elif newScreen == 'pie chart':
+            self.ids.chartScreen.chartScreenManager.current = 'pieScreen'
+        elif newScreen == 'line chart':
+            self.ids.chartScreen.chartScreenManager.current = 'lineScreen'
+        elif newScreen == 'table':
+            self.ids.chartScreen.chartScreenManager.current = 'tableScreen'
+
     def back(self):
         if self.screenList:
             tmp = self.screenList.pop()
@@ -73,5 +88,7 @@ class MainMenu(BoxLayout):
                 self.ids.selectorScreen.selectorScreenManager.current = tmp
             elif tmp in self.navigatorMenu:
                 self.ids.navigationScreen.navigationScreenManager.current = tmp
+            elif tmp in self.chartMenu:
+                self.ids.chartScreen.chartScreenManager.current = tmp
             return True
         return False
