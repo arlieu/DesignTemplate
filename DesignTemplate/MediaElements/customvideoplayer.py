@@ -15,7 +15,12 @@ class CustomVideoPlayer(VideoPlayer):
         #content.bind(on_press=popup.dismiss)
         #popup.open()
 
+        #HTV1
+        #self.source = 'http://83.139.104.108/Content/HLS/Live/Channel(HTV2)/Stream(03)/index.m3u8'
+        
+        #foreign channel
         self.source = 'http://80.250.191.10:1935/live/hlsstream343/playlist.m3u8'
+
         self.state = 'pause'
         self.options = {
             'allow_stretch': True

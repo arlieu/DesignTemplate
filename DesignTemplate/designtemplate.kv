@@ -2,6 +2,7 @@
 #:import CustomButton SelectorElements.custombutton
 #:import CustomToggleButton SelectorElements.customtogglebutton
 #:import KeyPad SelectorElements.keypad
+#:import ContourMap ChartingElements.customgraph
 #:import CustomVideoPlayer MediaElements.customvideoplayer
 
 
@@ -325,79 +326,22 @@
 			text: 'Work in progress'   
 
 
-#------------------------------Chart Menu------------------------------#
+#------------------------------Chart Demo------------------------------#
 <ChartScreen@Screen>:
     id: chartScreen
-    orientation: 'vertical' 
-    chartScreenManager: chartScreenManager
-
-	ScreenManager:
-		id: chartScreenManager
-
-		ChartStartScreen:
-			id: chartStartScreen
-			name: 'chartStartScreen'
-		MapScreen:
-			id: mapScreen
-			name: 'mapScreen'
-		PieScreen:
-			id: pieScreen
-			name: 'pieScreen'
-		LineScreen:
-			id: lineScreen
-			name: 'lineScreen'
-        TableScreen:
-			id: tableScreen
-			name: 'tableScreen'
-			
-            
-<ChartStartScreen@Screen>:
-    id: chartStartScreen
     
-    BoxLayout: 
-		orientation: 'vertical'
-		padding: root.width*0.02, root.height*0.02 
-		spacing: min(root.width, root.height)*0.02
+    Label: 
+        text: 'Trig Functions'
+        pos_hint: {'center_y': 0.9, 'center_x': 0.5}
+        height: self.texture_size[1] + self.texture_size[1]/2
 
-		WrappedLabel:	
-			text: '[b]Charting Tools[/b]'
-			font_size: min(root.height, root.width)/10
-		Button: 
-			text: 'Geographic Map'
-            on_release: app.root.subMenu3(self.text.lower())
-		Button: 
-			text: 'Pie Chart'
-            on_release: app.root.subMenu3(self.text.lower())
-		Button: 
-			text: 'Line Chart'
-            on_release: app.root.subMenu3(self.text.lower())
-		Button: 
-			text: 'Table'
-            on_release: app.root.subMenu3(self.text.lower())   
-    
+    FloatLayout:
+        pos_hint: {'center_y': 0.8, 'center_x': 0.5}
+        size_hint: 1.0, 0.8
 
-<MapScreen@Screen>:
-    id: mapScreen
-    BoxLayout: 
-        padding: root.width*0.02, root.height*0.02
-        
-
-<PieScreen@Screen>:
-    id: pieScreen
-    BoxLayout: 
-        padding: root.width*0.02, root.height*0.02      
-        
-    
-<LineScreen@Screen>:
-    id: lineScreen
-    BoxLayout: 
-        padding: root.width*0.02, root.height*0.02
-        
-    
-<TableScreen@Screen>:
-    id: tableScreen
-    BoxLayout: 
-        padding: root.width*0.02, root.height*0.02
+        CustomGraph:
+            size: self.size
+            pos: self.pos
 #------------------------------Media Demo------------------------------#
 
 <MediaScreen@Screen>:

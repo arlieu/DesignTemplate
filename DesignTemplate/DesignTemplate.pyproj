@@ -22,9 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ChartingElements\geographicmap.py">
+    <Compile Include="ChartingElements\contourmap.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ChartingElements\customgraph.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChartingElements\linechart.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="libs\garden\garden.graph\__init__.py" />
     <Compile Include="MediaElements\customvideoplayer.py">
       <SubType>Code</SubType>
     </Compile>
@@ -61,8 +68,14 @@
     <Content Include="designtemplate.kv">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="libs\garden\garden.graph\LICENSE" />
+    <Content Include="libs\garden\garden.graph\README.md" />
+    <Content Include="libs\garden\garden.graph\screenshot.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="libs\" />
+    <Folder Include="libs\garden\" />
+    <Folder Include="libs\garden\garden.graph\" />
     <Folder Include="NavigationElements\" />
     <Folder Include="MediaElements\" />
     <Folder Include="ChartingElements\" />
